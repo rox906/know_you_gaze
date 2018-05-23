@@ -30,3 +30,7 @@
 *.exe
 *.out
 *.app
+
+py3/
+.vscode/
+*.avi
