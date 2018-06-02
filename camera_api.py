@@ -44,19 +44,19 @@ while cap.isOpened(): #and cap2.isOpened():
         # out.write(frame)
         # out2.write(frame2)
 
-        eye_cascade = cv2.CascadeClassifier('./py3/lib/python3.6/'+
-        'site-packages/cv2/data/haarcascade_eye.xml')
-        eye_cascade_glasses = cv2.CascadeClassifier('./py3/lib/pyt'+
-        'hon3.6/site-packages/cv2/data/haarcascade_eye_tree_eyeglasses.xml')
-        eyes = eye_cascade.detectMultiScale(gray)
-        glasses = eye_cascade_glasses.detectMultiScale(gray)
-        for (ex, ey, ew, eh) in eyes:
-            cv2.rectangle(frame, (ex, ey), (ex+ew, ey+eh), (0, 255, 0), 2)
-            break
-        for (ex, ey, ew, eh) in glasses:
-            cv2.rectangle(frame, (ex, ey), (ex+ew, ey+eh), (0, 255, 0), 2)
+        # eye_cascade = cv2.CascadeClassifier('./py3/lib/python3.6/'+
+        # 'site-packages/cv2/data/haarcascade_eye.xml')
+        # eye_cascade_glasses = cv2.CascadeClassifier('./py3/lib/pyt'+
+        # 'hon3.6/site-packages/cv2/data/haarcascade_eye_tree_eyeglasses.xml')
+        # eyes = eye_cascade.detectMultiScale(gray)
+        # glasses = eye_cascade_glasses.detectMultiScale(gray)
+        # for (ex, ey, ew, eh) in eyes:
+        #     cv2.rectangle(frame, (ex, ey), (ex+ew, ey+eh), (0, 255, 0), 2)
+        #     break
+        # for (ex, ey, ew, eh) in glasses:
+        #     cv2.rectangle(frame, (ex, ey), (ex+ew, ey+eh), (0, 255, 0), 2)
 
-        cv2.imshow('frame', gray)
+        cv2.imshow('frame', frame)
         # cv2.imshow('frame2', frame2)
 
         if cv2.waitKey(1) & 0xFF == ord('q'):
