@@ -41,6 +41,7 @@ void screen_point(cv::Point frontpoint, cv::Mat &src, std::vector<cv::Point> &co
   std::vector<cv::Point2f> corners2f;
   for (int i = 0; i < 4; ++i) corners2f.push_back(corners[i]);
   cv::Mat transform = cv::getPerspectiveTransform(corners2f, srccorners);
+  //calculate screenpoint and draw
   std::vector<cv::Point2f> raw;
   std::vector<cv::Point2f> trans;
   raw.push_back(frontpoint);
@@ -77,8 +78,6 @@ void detect_and_show(cv::Mat src, cv::Mat &myfigure, std::string showfigure)
   std::vector<cv::Point> corners;
   find_corners(corners, my_contours[drawid_area[0].second]);
   screen_point(cv::Point(320, 200), myfigure, corners);
-  // cv::circle(myfigure, cv::Point(320, 200), 10, cv::Scalar::all(0), -1);
-  // cv::circle(src, corners[0], 10, cv::Scalar::all(0), -1);
   //show result
   cv::imshow("drawcontour", src);
   cv::imshow(showfigure, myfigure);
